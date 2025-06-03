@@ -1,26 +1,29 @@
-# Sistema de Evaluaciones en PHP
+# Sistema de Evaluaciones
 
-Este paquete contiene tres clases PHP orientadas a manejar un sistema básico de evaluaciones con preguntas y alternativas.
+Este proyecto proporciona una API para gestionar **evaluaciones**, **preguntas** y **alternativas**. Está diseñado para almacenar evaluaciones con preguntas y alternativas posibles, permitiendo a los usuarios realizar exámenes. 
 
-## Estructura de Archivos
+## Tecnologías Usadas
 
-- `Evaluacion.php`: Clase para crear y listar evaluaciones.
-- `Pregunta.php`: Clase para crear y listar preguntas vinculadas a una evaluación.
-- `Alternativa.php`: Clase para crear y listar alternativas asociadas a una pregunta.
-- `conexion.php`: Archivo de conexión a la base de datos MySQL.
+- **PHP**: Lenguaje de programación del backend.
+- **MySQL**: Base de datos para almacenar las evaluaciones, preguntas y alternativas.
+- **API RESTful**: Comunicación con el frontend a través de HTTP.
 
-## Requisitos
+## Estructura del Proyecto
 
-- Servidor web con soporte PHP (por ejemplo, XAMPP, LAMP).
-- MySQL y base de datos configurada con las tablas necesarias.
-- PHP 7.0 o superior.
+La API proporciona tres entidades principales:
+1. **Evaluación**: Un conjunto de preguntas.
+2. **Pregunta**: Una pregunta dentro de una evaluación.
+3. **Alternativa**: Opciones posibles para cada pregunta.
 
+Cada entidad tiene sus respectivas operaciones CRUD (Crear, Leer) a través de una API RESTful.
 
-## Conexión a Base de Datos
+## Endpoints
 
-Modificar `conexion.php` con tus credenciales y nombre de base de datos:
+### 1. **Evaluaciones**
 
-```php
-$conexion = new mysqli("localhost", "usuario", "contraseña", "nombre_base_datos");
-```
+#### Obtener todas las evaluaciones (GET)
+- **URL**: `/evaluaciones`
+- **Método**: `GET`
+- **Parámetros**:
+  - `task=getAll` (Requerido para obtener todas las evaluaciones)
 
